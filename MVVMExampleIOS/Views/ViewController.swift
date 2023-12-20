@@ -10,13 +10,13 @@ import UIKit
 class ViewController: UIViewController {
     
     var viewModel = LoginViewModel(email: "", password: "")
-
+    
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateView()
+//        updateView()
     }
     
     func updateView(){
@@ -44,6 +44,6 @@ class ViewController: UIViewController {
         viewModel.login(email: email, password: password, completion: complete)
     }
     
-
+    
 }
 
