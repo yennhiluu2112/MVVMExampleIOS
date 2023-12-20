@@ -35,11 +35,14 @@ class HomeTableViewCell: UITableViewCell {
         nameLabel.text = category
         
         let url = URL(string: imageURL)!
-        let data = try? Data(contentsOf: url)
-        if let imageData = data {
-            let image = UIImage(data: imageData)
-            prodImageView.image = image
+        DispatchQueue.main.async {
+            let data = try? Data(contentsOf: url)
+            if let imageData = data {
+                let image = UIImage(data: imageData)
+                self.prodImageView.image = image
+            }
         }
+        
     }
     
     
